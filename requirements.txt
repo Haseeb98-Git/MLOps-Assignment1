@@ -1,2 +1,5 @@
 scikit-learn
 pytest
+Flask
+numpy
+gunicorn
