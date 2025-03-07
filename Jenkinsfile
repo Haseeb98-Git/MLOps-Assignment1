@@ -15,7 +15,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh "docker build -t ${DOCKER_IMAGE} ."
+                    bat "docker build -t ${DOCKER_IMAGE} ."
                 }
             }
         }
@@ -24,7 +24,7 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry([credentialsId: 'docker-hub-credentials', url: '']) {
-                        sh "docker push ${DOCKER_IMAGE}"
+                        bat "docker push ${DOCKER_IMAGE}"
                     }
                 }
             }
@@ -33,7 +33,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    sh "docker run -d -p 5000:5000 ${DOCKER_IMAGE}"
+                    bat "docker run -d -p 5000:5000 ${DOCKER_IMAGE}"
                 }
             }
         }
