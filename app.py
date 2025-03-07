@@ -25,6 +25,7 @@ model.fit(X_train, y_train)
 
 # Predict function
 
+
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.json  # Expecting a JSON request
@@ -52,4 +53,3 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
 # this is a comment
 # this is another comment
-
