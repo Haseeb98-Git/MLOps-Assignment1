@@ -2,7 +2,6 @@ from flask import Flask, request, jsonify
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import accuracy_score
 from sklearn.datasets import load_iris
 
 app = Flask(__name__)
@@ -48,3 +47,5 @@ def home():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
+# this is a comment
+# this is another comment
