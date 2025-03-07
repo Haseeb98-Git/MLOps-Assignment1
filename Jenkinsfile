@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = "your_dockerhub_username/iris-predictor"
+        DOCKER_IMAGE = "theusername/iris-predictor"
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/your-repo.git'
+                git 'https://github.com/Haseeb98-Git/MLOps-Assignment1'
             }
         }
 
@@ -41,12 +41,12 @@ pipeline {
 
     post {
         success {
-            mail to: 'admin@example.com',
+            mail to: 'hasseebalioriginal@gmail.com',
                  subject: 'Deployment Successful',
                  body: 'The Flask app has been successfully deployed.'
         }
         failure {
-            mail to: 'admin@example.com',
+            mail to: 'hasseebalioriginal@gmail.com',
                  subject: 'Deployment Failed',
                  body: 'Something went wrong during deployment.'
         }
