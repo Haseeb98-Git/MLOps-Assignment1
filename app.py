@@ -25,6 +25,8 @@ model.fit(X_train, y_train)
 
 # Predict function
 @app.route('/predict', methods=['POST'])
+
+
 def predict():
     data = request.json  # Expecting a JSON request
     features = data.get('features', [])
@@ -40,8 +42,11 @@ def predict():
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
+
 # Home route
 @app.route('/')
+
+
 def home():
     return "Iris Prediction API is Running!"
 
